@@ -31,6 +31,7 @@
         | "Telegram"
         | "Instagram"
         | "Messenger"
+        | "Web"
         | null = null;
     export let activeStatus: "Online" | "Offline" | "Human Required" | null =
         null;
@@ -58,6 +59,7 @@
         Telegram: ["Telegram", "telegram", "TELEGRAM"],
         Instagram: ["Instagram", "instagram", "INSTAGRAM"],
         Messenger: ["Messenger", "messenger", "MESSENGER"],
+        Web: ["Web", "web", "WEB"],
     };
 
     // Оновлений маппінг статусів фільтра до статусів користувачів
