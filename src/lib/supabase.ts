@@ -7,7 +7,7 @@ const supabaseAnonKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYm
 export const supabase = createClient(supabaseUrl, supabaseAnonKey)
 
 // Get the current user from localStorage
-function getCurrentUser() {
+export function getCurrentUser() {
     if (typeof window !== 'undefined') {
         const userJson = localStorage.getItem('user')
         return userJson ? JSON.parse(userJson) : null

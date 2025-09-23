@@ -13,6 +13,7 @@
         saveAgentPrompt,
     } from "../../lib/supabase";
     import type { Bot, AgentPrompt } from "../../lib/supabase";
+    import { getCurrentUser } from "../../lib/supabase";
 
     // Platform data
     const platforms = [
@@ -159,7 +160,10 @@
             try {
                 const agent = selectedAgent; // Create a non-null reference
                 const currentTime = new Date().toISOString();
-                const currentUser = "current_user@alara.ai"; // This would come from auth in a real app
+                const currentUser =
+                    getCurrentUser().email ||
+                    getCurrentUser().name ||
+                    "unknown";
 
                 // Update local state
                 agent.prompts[activePromptType].text =
