@@ -10,6 +10,7 @@
     import imgChats2 from "../../lib/images/envelope (2).png";
     import imgAnalytics2 from "../../lib/images/analytics.png";
     import logOut from "../../lib/images/logout.png";
+    import agent from "../../lib/images/agent.png";
 
     $: currentPath = $page.url.pathname;
 
@@ -52,6 +53,16 @@
     >
         <img src={imgAnalytics2} alt="Analytics" />
     </div>
+    <div
+        class="block-bar prompts"
+        class:active={currentPath === "/prompts"}
+        on:click={() => navigateTo("/prompts")}
+        on:keydown={(e) => e.key === "Enter" && navigateTo("/prompts")}
+        role="button"
+        tabindex="0"
+    >
+        <img src={agent} class="prompts-img" alt="Prompts" />
+    </div>
     <!-- <div
         class="block-bar settings"
         class:active={currentPath === '/widgets'}
@@ -81,7 +92,7 @@
         tabindex="0"
         title="Log Out"
     >
-         <img src={logOut} alt="logout" />
+        <img src={logOut} alt="logout" />
     </div>
 </div>
 
@@ -120,6 +131,11 @@
     .block-bar img {
         width: 20px;
         height: 20px;
+        transition: all 0.3s ease;
+    }
+    .block-bar .prompts-img {
+        width: 30px;
+        height: 35px;
         transition: all 0.3s ease;
     }
 

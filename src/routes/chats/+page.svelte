@@ -4,7 +4,6 @@
     import Filters from "./Filters.svelte";
     import { themeStore } from "../../lib/store/theme";
     import type { User } from "../../lib/types/type";
-    
 
     let selectedUser: User | null = null;
     let isFullscreen: boolean = false;
@@ -35,10 +34,10 @@
     }
 </script>
 
-<div 
-    class="main-container" 
-    class:dark={$themeStore === 'dark'} 
-    class:light={$themeStore === 'light'}
+<div
+    class="main-container"
+    class:dark={$themeStore === "dark"}
+    class:light={$themeStore === "light"}
 >
     {#if !isFullscreen}
         <Filters onUserSelect={handleUserSelect} />
@@ -53,10 +52,10 @@
             on:backgroundChange={handleBackgroundChange}
         />
     {:else}
-        <div 
+        <div
             class="chats-container"
-            class:dark={$themeStore === 'dark'} 
-            class:light={$themeStore === 'light'}
+            class:dark={$themeStore === "dark"}
+            class:light={$themeStore === "light"}
         >
             <h1>Your Chats</h1>
             <div class="chat-list">
@@ -90,7 +89,9 @@
         flex: 1;
         padding-top: 4.2%;
         padding-left: 5%;
-        transition: color 0.3s ease, background-color 0.3s ease;
+        transition:
+            color 0.3s ease,
+            background-color 0.3s ease;
     }
 
     /* Темна тема для контейнера чатів */
